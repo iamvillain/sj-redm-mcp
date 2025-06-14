@@ -1,0 +1,11 @@
+{
+  "mcpServers": {
+    "sj-redm-mcp": {
+      "command": "node",
+      "args": ["/absolute/path/to/sj-redm-mcp/index.js"],
+      "env": {
+        "GITHUB_TOKEN": "your-github-token-here"
+      }
+    }
+  }
+}

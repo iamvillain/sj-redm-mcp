@@ -1,0 +1,41 @@
+{
+  "name": "sj-redm-mcp",
+  "version": "1.0.0",
+  "description": "Unified RedM MCP Server - A Swiss Army knife for RedM development with RDR3 discoveries, framework docs (VORP/RSGCore), and native functions",
+  "main": "index.js",
+  "type": "module",
+  "scripts": {
+    "start": "node index.js",
+    "test": "node test.js"
+  },
+  "keywords": [
+    "mcp",
+    "redm",
+    "rdr3",
+    "vorp",
+    "rsgcore",
+    "natives",
+    "documentation",
+    "red-dead-redemption",
+    "lua-scripting"
+  ],
+  "author": "SJ Development",
+  "license": "MIT",
+  "dependencies": {
+    "@modelcontextprotocol/sdk": "^1.0.4",
+    "octokit": "^3.1.2",
+    "marked": "^11.1.1",
+    "gray-matter": "^4.0.3"
+  },
+  "engines": {
+    "node": ">=16.0.0"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/your-repo/sj-redm-mcp"
+  },
+  "bugs": {
+    "url": "https://github.com/your-repo/sj-redm-mcp/issues"
+  },
+  "homepage": "https://github.com/your-repo/sj-redm-mcp#readme"
+}
