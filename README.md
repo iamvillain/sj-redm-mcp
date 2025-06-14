@@ -182,7 +182,7 @@ sj-redm-mcp/
 Example native output:
 ```lua
 -- Set ped component variation
-Ped.SetPedComponentVariation(ped, componentId, drawableId, textureId, paletteId) -- 0x262B14F48D29DE80
+SetPedComponentVariation(ped, componentId, drawableId, textureId, paletteId) -- 0x262B14F48D29DE80
 ```
 
 ## Troubleshooting
