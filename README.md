@@ -32,7 +32,7 @@ A unified "Swiss Army knife" MCP (Model Context Protocol) server for RedM develo
 
 ### Prerequisites
 - Node.js 16.0.0 or higher
-- Claude Desktop application
+- Claude Desktop application OR Claude Code CLI
 
 ### Quick Setup
 
@@ -46,7 +46,38 @@ A unified "Swiss Army knife" MCP (Model Context Protocol) server for RedM develo
    npm install
    ```
 
-3. **Configure Claude Desktop:**
+3. **Choose your setup method:**
+
+#### Option A: Claude Code CLI Setup (Recommended)
+
+1. **Add the MCP server:**
+   ```bash
+   claude mcp add sj-redm-mcp node "/absolute/path/to/sj-redm-mcp/index.js"
+   ```
+
+2. **Set GitHub token (optional but recommended):**
+   ```bash
+   claude mcp add-json sj-redm-mcp '{
+     "command": "node",
+     "args": ["/absolute/path/to/sj-redm-mcp/index.js"],
+     "env": {
+       "GITHUB_TOKEN": "your-github-token-here"
+     }
+   }'
+   ```
+
+3. **Verify the server is configured:**
+   ```bash
+   claude mcp list
+   ```
+
+**Alternative: Project-level configuration**
+
+The repository includes a `.mcp.json` file for project-level configuration. When working in this directory, Claude Code CLI will automatically detect and use the MCP server.
+
+#### Option B: Claude Desktop Setup
+
+1. **Configure Claude Desktop:**
    
    Add the following to your Claude Desktop configuration file:
    
@@ -69,7 +100,7 @@ A unified "Swiss Army knife" MCP (Model Context Protocol) server for RedM develo
 
    **Note:** GitHub token is optional but recommended for higher API rate limits.
 
-4. **Restart Claude Desktop**
+2. **Restart Claude Desktop**
 
 ## Available Tools
 
@@ -182,7 +213,7 @@ sj-redm-mcp/
 Example native output:
 ```lua
 -- Set ped component variation
-SetPedComponentVariation(ped, componentId, drawableId, textureId, paletteId) -- 0x262B14F48D29DE80
+Ped.SetPedComponentVariation(ped, componentId, drawableId, textureId, paletteId) -- 0x262B14F48D29DE80
 ```
 
 ## Troubleshooting
@@ -202,7 +233,13 @@ SetPedComponentVariation(ped, componentId, drawableId, textureId, paletteId) -- 
    - Ensure JSON syntax is valid in claude_desktop_config.json
    - Restart Claude Desktop after configuration changes
 
-4. **Documentation not loading**
+4. **Claude Code CLI not recognizing server**
+   - Run `claude mcp list` to verify the server is configured
+   - Check that the absolute path in your configuration is correct
+   - If using project-level config, ensure you're in the correct directory
+   - Run `claude mcp remove sj-redm-mcp` and re-add if needed
+
+5. **Documentation not loading**
    - Check that all documentation files are in the docs/ directory
    - Verify file permissions allow reading
 

@@ -38,9 +38,13 @@ try {
   
   console.log('\n✅ Basic tests passed! Server appears to be correctly configured.');
   console.log('\nNext steps:');
+  console.log('Option A - Claude Code CLI (Recommended):');
+  console.log('1. Run: ./setup-claude-cli.sh (Linux/Mac) or setup-claude-cli.bat (Windows)');
+  console.log('2. Or manually: claude mcp add sj-redm-mcp node "/path/to/index.js"');
+  console.log('\nOption B - Claude Desktop:');
   console.log('1. Add the server to your Claude Desktop configuration');
   console.log('2. Restart Claude Desktop');
-  console.log('3. Test the tools in Claude');
+  console.log('\nThen test the tools in Claude!');
   
 } catch (error) {
   console.error('❌ Test failed:', error.message);
